@@ -1,0 +1,35 @@
+name: Work item
+description: A structured task, improvement, or tech-debt item (the standard IP shape)
+title: "<short imperative title>"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for a concrete piece of work. For a bug, set the issue **Type** to `Bug`;
+        for an open question or discussion, a blank issue is fine. Keep it scannable —
+        a downstream reader (or agent) should be able to act on this without backstory.
+  - type: textarea
+    id: context
+    attributes:
+      label: Context / problem
+      description: What's the situation, and why does it matter? Link the evidence that surfaced it (a failing run, a PR, an ADR) where you can.
+      placeholder: What's broken / missing / worth doing, and the signal that prompted it.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Proposed work / acceptance criteria
+      description: What does "done" look like? A checklist is ideal — it doubles as the closing checklist.
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: true
+  - type: input
+    id: related
+    attributes:
+      label: Related
+      description: Issues, PRs, ADRs, or other context — e.g. "blocked by #123", "relates to ADR-036", "Closes org/repo#45".
+    validations:
+      required: false
